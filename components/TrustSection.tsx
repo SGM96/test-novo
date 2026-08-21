@@ -1,6 +1,8 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { BadgeCheck } from "lucide-react";
 import FadeIn from "./FadeIn";
+import { CLIENT_LOGOS } from "@/lib/clientLogos";
 
 export default async function TrustSection() {
   const t = await getTranslations("Trust");
@@ -32,13 +34,19 @@ export default async function TrustSection() {
           <h2 className="mt-10 text-center text-2xl font-bold text-foreground sm:text-3xl">
             {t("title")}
           </h2>
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {Array.from({ length: 8 }).map((_, index) => (
+          <div className="scrollbar-hide mt-10 flex items-center gap-10 overflow-x-auto px-1 py-2 sm:flex-wrap sm:justify-center sm:overflow-visible">
+            {CLIENT_LOGOS.map((logo) => (
               <div
-                key={index}
-                className="flex h-16 items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/[0.03] text-xs font-medium uppercase tracking-wide text-foreground/30"
+                key={logo.name}
+                className="flex flex-shrink-0 items-center opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
               >
-                LOGO
+                <Image
+                  src={`/logos-clientes/${logo.file}`}
+                  alt={logo.name}
+                  width={logo.width}
+                  height={logo.height}
+                  className="h-7 w-auto object-contain sm:h-10"
+                />
               </div>
             ))}
           </div>
