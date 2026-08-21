@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #0a0a1f;
+  --color-foreground: #f3f2ff;
+  --color-purple-brand: #6d28d9;
+  --color-purple-brand-light: #9061f9;
+  --color-teal-brand: #14b8a6;
+  --color-navy-card: #12122c;
+  --font-sans: var(--font-jakarta);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.text-gradient {
+  background-image: linear-gradient(90deg, #a855f7, #6d28d9 45%, #14b8a6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-hero-gradient {
+  background: radial-gradient(
+      circle at 15% 0%,
+      rgba(109, 40, 217, 0.35),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(20, 184, 166, 0.25),
+      transparent 50%
+    ),
+    linear-gradient(160deg, #0a0a1f 0%, #0e0b28 45%, #0a0a1f 100%);
+}
+
+.bg-card-gradient {
+  background: linear-gradient(135deg, rgba(109, 40, 217, 0.35) 0%, rgba(10, 10, 31, 0.6) 55%, rgba(20, 184, 166, 0.12) 100%);
+}
+
+.bg-section-alt {
+  background: linear-gradient(180deg, #0a0a1f 0%, #0d0a24 100%);
+}
+
+.accent-bar {
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6d28d9, #14b8a6);
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a1f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6d28d9, #14b8a6);
+  border-radius: 999px;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero {
+  animation: fade-in-up 0.8s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero {
+    animation: none;
+  }
 }

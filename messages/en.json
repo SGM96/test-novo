@@ -1,0 +1,275 @@
+{
+  "Metadata": {
+    "title": "Novopayment | Banking as a Service Infrastructure for the Americas",
+    "description": "Novopayment provides Banking as a Service (BaaS) infrastructure for banks, fintechs, and digital platforms across 15 markets in the Americas: card issuing, credit, payment switching, and more."
+  },
+  "Header": {
+    "brand": "Novopayment",
+    "navProducts": "Products",
+    "navWhyUs": "Why Novopayment",
+    "navRegions": "Regional presence",
+    "navContact": "Contact",
+    "cta": "Talk to us",
+    "languageLabel": "Language"
+  },
+  "LanguageSwitcher": {
+    "es": "Español",
+    "en": "English"
+  },
+  "Hero": {
+    "titleBefore": "The future of",
+    "titleHighlight": "payments",
+    "titleAfter": "is already here",
+    "subtitle": "Banking as a Service (BaaS) infrastructure for banks, fintechs, and digital platforms across the Americas.",
+    "cta": "Talk to us",
+    "stats": [
+      { "value": "2007", "label": "Founded in" },
+      { "value": "15", "label": "active markets" },
+      { "value": "+310M", "label": "transactions per year" }
+    ]
+  },
+  "Regions": {
+    "title": "Regional presence with local talent and expertise.",
+    "subtitle": "Local teams and strategic connections in the most dynamic markets across the Americas.",
+    "hqBadge": "HQ",
+    "countries": [
+      { "code": "us", "name": "United States", "hq": true },
+      { "code": "mx", "name": "Mexico", "hq": false },
+      { "code": "gt", "name": "Guatemala", "hq": false },
+      { "code": "sv", "name": "El Salvador", "hq": false },
+      { "code": "hn", "name": "Honduras", "hq": false },
+      { "code": "pa", "name": "Panama", "hq": false },
+      { "code": "co", "name": "Colombia", "hq": false },
+      { "code": "ec", "name": "Ecuador", "hq": false },
+      { "code": "pe", "name": "Peru", "hq": false },
+      { "code": "do", "name": "Dominican Republic", "hq": false },
+      { "code": "jm", "name": "Jamaica", "hq": false }
+    ]
+  },
+  "WhyUs": {
+    "title": "Why Novopayment",
+    "subtitle": "Three reasons banks, fintechs, and digital platforms trust their payments infrastructure to Novopayment.",
+    "cards": [
+      {
+        "icon": "shield",
+        "title": "Flexible, scalable, and secure solutions",
+        "description": "Our next-generation modular payment solutions adapt to any organization, with delivery flexibility, built-in compliance, and guaranteed bank-grade security."
+      },
+      {
+        "icon": "users",
+        "title": "Connections and talent across the region",
+        "description": "We have a team present across the U.S. and LatAm, with strong positioning in strategic markets and direct attention to customer needs."
+      },
+      {
+        "icon": "cpu",
+        "title": "Technology experts with a financial focus",
+        "description": "Our culture combines financial expertise with a passion for technology. Our team excels at the intersection of innovation and industry knowledge."
+      }
+    ]
+  },
+  "ProblemSolution": {
+    "titleBefore": "Next-generation payments platform",
+    "titleHighlight": "solves",
+    "titleAfter": "the problems caused by legacy systems.",
+    "categoryHeader": "Category",
+    "problemHeader": "Legacy systems",
+    "solutionHeader": "Novopayment",
+    "rows": [
+      {
+        "category": "Architecture",
+        "problem": "Monolithic, costly release cycles, legacy cores",
+        "solution": "Event-driven microservices, headless and API-first"
+      },
+      {
+        "category": "Infrastructure",
+        "problem": "Legacy hardware, costly, inflexible",
+        "solution": "Cloud-native, hardware-free, near-infinite scalability"
+      },
+      {
+        "category": "Integrations",
+        "problem": "Fragile, core-based",
+        "solution": "APIs, events, webhooks, interceptors"
+      },
+      {
+        "category": "Processing",
+        "problem": "End-of-day batch processing, downtime",
+        "solution": "Real-time processing, zero downtime"
+      }
+    ]
+  },
+  "Products": {
+    "title": "Core products",
+    "subtitle": "A modular, API-first stack to build any financial experience.",
+    "howItWorksLabel": "How it works",
+    "useCasesLabel": "Use cases",
+    "differentiatorLabel": "Key differentiator",
+    "expandLabel": "See how it works",
+    "collapseLabel": "See less",
+    "items": [
+      {
+        "id": "novocard",
+        "name": "NovoCard",
+        "description": "Start issuing credit, debit, and prepaid cards to your customers in record time and transform their experience.",
+        "differentiator": "API-first architecture: launch a full card program in weeks, not months.",
+        "steps": [
+          "Configure the program — define the brand (Visa, Mastercard, or closed loop), BIN, and rules via API.",
+          "Instant issuance — generate virtual and physical cards in minutes.",
+          "Real-time management — blocking, limits, tokenization, and monitoring from day one."
+        ],
+        "useCases": ["Retail neobank", "Payroll fintech", "Marketplace"]
+      },
+      {
+        "id": "novocredit",
+        "name": "NovoCredit",
+        "description": "Empower issuers and fintechs with a complete toolkit for loan management, automation, and servicing.",
+        "differentiator": "A single end-to-end platform for consumer, business, auto, and mortgage credit.",
+        "steps": [
+          "Origination — connected to underwriting and external decisioning engines.",
+          "Automated servicing — autopay, statements, and full loan lifecycle management.",
+          "Flexible collections — configurable payment plans and hardship programs."
+        ],
+        "useCases": [
+          "Consumer credit",
+          "Factoring",
+          "Digital banks",
+          "Buy now pay later",
+          "Auto",
+          "Mortgages",
+          "Line of credit",
+          "Small business",
+          "Student"
+        ]
+      },
+      {
+        "id": "novoflow",
+        "name": "NovoFlow",
+        "description": "Build payment and correspondent networks that give your customers instant access and convenience.",
+        "differentiator": "A single switch connects every participant in your network, with no point-to-point integrations.",
+        "steps": [
+          "Connect your platform — integrate via APIs to NovoPayment's Banking Network.",
+          "Add correspondents — onboard banks and participants in a standardized way.",
+          "Process in real time — instant book-to-book transfers and inter-institution payments."
+        ],
+        "useCases": ["Banking correspondence", "Cooperatives", "Closed-loop networks"]
+      },
+      {
+        "id": "novoflux",
+        "name": "NovoFlux",
+        "description": "A cloud-native payments switch that routes transactions dynamically, reliably, and securely.",
+        "differentiator": "Cuts network connection time by up to 98% compared to legacy infrastructure.",
+        "steps": [
+          "Direct cloud connection — no dedicated hardware, direct connection to Visa and Mastercard.",
+          "Dynamic routing — real-time authorization with low latency and high availability.",
+          "Switching + Issuing — process, authorize, and issue from a single cloud-native platform."
+        ],
+        "useCases": [
+          "Migration from legacy systems",
+          "High-volume fintechs",
+          "Seasonal peaks"
+        ]
+      },
+      {
+        "id": "novospend",
+        "name": "NovoSpend",
+        "description": "Offer simplified expense management solutions to your corporate customers.",
+        "differentiator": "Moves spend policy to the only moment it can actually be effective: the instant of authorization.",
+        "steps": [
+          "Corporate funding — manage master accounts and sub-accounts for flexible fund allocation.",
+          "Card issuance — distribute physical or virtual cards, individually, in bulk, or unnamed.",
+          "Real-time spend controls — per card, employee, or program limits, and merchant category restrictions before authorization."
+        ],
+        "useCases": [
+          "Sales commissions",
+          "Reimbursements and incentives",
+          "Travel and per diem",
+          "Higher education",
+          "Urban mobility and delivery",
+          "Employee incentives",
+          "Recruiting",
+          "Contractors",
+          "Relocation",
+          "Fleet and fuel"
+        ]
+      }
+    ]
+  },
+  "Performance": {
+    "title": "Platform performance",
+    "subtitle": "Improvements over legacy processors and infrastructure, based on NovoPayment's internal benchmarks.",
+    "metrics": [
+      { "prefix": "-", "value": 99, "decimals": 0, "suffix": "%", "label": "authorization speed" },
+      { "prefix": "-", "value": 99, "decimals": 0, "suffix": "%", "label": "time to restore/add a server" },
+      { "prefix": "", "value": 8, "decimals": 0, "suffix": "x", "label": "parallel transactions" },
+      { "prefix": "-", "value": 98, "decimals": 0, "suffix": "%", "label": "network connection time" },
+      { "prefix": "", "value": 1.3, "decimals": 1, "suffix": "x", "label": "peak processing capacity" }
+    ]
+  },
+  "CloudInfra": {
+    "title": "NovoPayment's Cloud Solution",
+    "subtitle": "Cloud-native infrastructure that removes dedicated hardware and connects your business to global payment networks.",
+    "items": [
+      {
+        "name": "Axion Connector",
+        "description": "Direct connection to payment networks via the cloud, eliminating dedicated hardware."
+      },
+      {
+        "name": "Authrix Authorizer",
+        "description": "Multi-tenant authorization platform with rules and processing in the cloud."
+      },
+      {
+        "name": "Nexus Integrator",
+        "description": "Seamlessly integrate with external systems using existing APIs, flows, and data schemas."
+      }
+    ]
+  },
+  "ValueAdded": {
+    "title": "Value-added products",
+    "subtitle": "A complete set of complementary products from our modular stack.",
+    "items": [
+      {
+        "name": "Card Tokenization",
+        "description": "NovoPayment acts as a Visa Token Service Provider, enabling secure digital commerce across e-commerce and mobile apps."
+      },
+      {
+        "name": "Click to Pay",
+        "description": "Tokenized checkout with no need to re-enter card data, reducing cart abandonment."
+      },
+      {
+        "name": "Push Provisioning",
+        "description": "Register cards directly into Apple Pay, Google Pay, and Samsung Pay from the bank's app."
+      },
+      {
+        "name": "Tap to Pay",
+        "description": "Turns the cardholder's phone into their primary payment method via NFC, with no physical card."
+      }
+    ]
+  },
+  "Trust": {
+    "title": "Trusted by leading innovators",
+    "certificationsTitle": "Certifications and standards",
+    "certifications": ["Visa Ready", "PCI DSS", "SOC 1", "SOC 2", "ISO 27001", "ISO 27017", "ISO 27018"],
+    "partnersPlaceholder": "Partner and client logos coming soon"
+  },
+  "FinalCta": {
+    "title": "Ready to build the future of payments?",
+    "subtitle": "Let's talk about how Novopayment's infrastructure can power your business.",
+    "formNamePlaceholder": "Full name",
+    "formEmailPlaceholder": "Corporate email",
+    "formCompanyPlaceholder": "Company",
+    "formMessagePlaceholder": "Tell us about your project",
+    "formSubmit": "Send message",
+    "formSuccess": "Thank you! We'll be in touch soon.",
+    "ctaButton": "Talk to us"
+  },
+  "Footer": {
+    "description": "Banking as a Service (BaaS) infrastructure for banks, fintechs, and digital platforms across the Americas.",
+    "productsTitle": "Products",
+    "companyTitle": "Company",
+    "legalTitle": "Legal",
+    "companyLinks": ["Why Novopayment", "Regional presence", "Contact"],
+    "legalLinks": ["Terms and conditions", "Privacy policy", "Security"],
+    "socialLabel": "Follow us",
+    "rights": "All rights reserved.",
+    "legalNote": "Novopayment and its solutions are offered through regulated entities in each jurisdiction. Banking services are provided by partner financial institutions."
+  }
+}

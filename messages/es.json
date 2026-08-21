@@ -1,0 +1,275 @@
+{
+  "Metadata": {
+    "title": "Novopayment | Infraestructura de Banking as a Service para América",
+    "description": "Novopayment ofrece infraestructura de Banking as a Service (BaaS) para bancos, fintechs y plataformas digitales en 15 mercados de América: emisión de tarjetas, crédito, switching de pagos y más."
+  },
+  "Header": {
+    "brand": "Novopayment",
+    "navProducts": "Productos",
+    "navWhyUs": "Por qué Novopayment",
+    "navRegions": "Presencia regional",
+    "navContact": "Contacto",
+    "cta": "Habla con nosotros",
+    "languageLabel": "Idioma"
+  },
+  "LanguageSwitcher": {
+    "es": "Español",
+    "en": "English"
+  },
+  "Hero": {
+    "titleBefore": "El futuro de los",
+    "titleHighlight": "pagos",
+    "titleAfter": ", ya está aquí",
+    "subtitle": "Infraestructura de Banking as a Service (BaaS) para bancos, fintechs y plataformas digitales en toda América.",
+    "cta": "Habla con nosotros",
+    "stats": [
+      { "value": "2007", "label": "Fundada en" },
+      { "value": "15", "label": "mercados activos" },
+      { "value": "+310M", "label": "transacciones al año" }
+    ]
+  },
+  "Regions": {
+    "title": "Presencia regional con talento y experiencia local.",
+    "subtitle": "Equipos locales y conexiones estratégicas en los mercados más dinámicos de América.",
+    "hqBadge": "Sede",
+    "countries": [
+      { "code": "us", "name": "Estados Unidos", "hq": true },
+      { "code": "mx", "name": "México", "hq": false },
+      { "code": "gt", "name": "Guatemala", "hq": false },
+      { "code": "sv", "name": "El Salvador", "hq": false },
+      { "code": "hn", "name": "Honduras", "hq": false },
+      { "code": "pa", "name": "Panamá", "hq": false },
+      { "code": "co", "name": "Colombia", "hq": false },
+      { "code": "ec", "name": "Ecuador", "hq": false },
+      { "code": "pe", "name": "Perú", "hq": false },
+      { "code": "do", "name": "República Dominicana", "hq": false },
+      { "code": "jm", "name": "Jamaica", "hq": false }
+    ]
+  },
+  "WhyUs": {
+    "title": "Por qué Novopayment",
+    "subtitle": "Tres razones por las que bancos, fintechs y plataformas digitales confían su infraestructura de pagos a Novopayment.",
+    "cards": [
+      {
+        "icon": "shield",
+        "title": "Soluciones flexibles, escalables y seguras",
+        "description": "Nuestras soluciones modulares de última generación para pagos se adaptan a cualquier organización, con flexibilidad en la entrega, cumplimiento incorporado y seguridad bancaria garantizada."
+      },
+      {
+        "icon": "users",
+        "title": "Conexiones y personal en toda la región",
+        "description": "Contamos con un equipo presente en EE.UU y LatAm, con fuerte posicionamiento en mercados estratégicos y atención directa a las necesidades del cliente."
+      },
+      {
+        "icon": "cpu",
+        "title": "Expertos en tecnología con enfoque financiero",
+        "description": "Nuestra cultura combina la experiencia financiera con la pasión por la tecnología. Nuestro equipo se destaca en la intersección entre la innovación y el conocimiento del sector."
+      }
+    ]
+  },
+  "ProblemSolution": {
+    "titleBefore": "Plataforma de pago de nueva generación",
+    "titleHighlight": "resuelve",
+    "titleAfter": "los problemas derivados de los sistemas antiguos.",
+    "categoryHeader": "Categoría",
+    "problemHeader": "Sistemas antiguos",
+    "solutionHeader": "Novopayment",
+    "rows": [
+      {
+        "category": "Arquitectura",
+        "problem": "Monolítica, ciclos costosos, núcleos heredados",
+        "solution": "Microservicios basados en eventos, headless y API-first"
+      },
+      {
+        "category": "Infraestructura",
+        "problem": "Hardware legado, costoso, inflexible",
+        "solution": "Nativo de la nube, sin hardware, escalabilidad casi infinita"
+      },
+      {
+        "category": "Integraciones",
+        "problem": "Frágiles, basadas en el core",
+        "solution": "API, eventos, webhooks, interceptores"
+      },
+      {
+        "category": "Procesamiento",
+        "problem": "Batch de final de día, tiempos de inactividad",
+        "solution": "Procesamiento en tiempo real, sin tiempo de inactividad"
+      }
+    ]
+  },
+  "Products": {
+    "title": "Productos core",
+    "subtitle": "Un stack modular y API-first para construir cualquier experiencia financiera.",
+    "howItWorksLabel": "Cómo funciona",
+    "useCasesLabel": "Casos de uso",
+    "differentiatorLabel": "Diferencial clave",
+    "expandLabel": "Ver cómo funciona",
+    "collapseLabel": "Ver menos",
+    "items": [
+      {
+        "id": "novocard",
+        "name": "NovoCard",
+        "description": "Comienza a emitir tarjetas de crédito, débito y prepago para tus clientes en tiempo récord y transforma su experiencia.",
+        "differentiator": "Arquitectura API-first: lanzá un programa de tarjetas completo en semanas, no meses.",
+        "steps": [
+          "Configurá el programa — definí marca (Visa, Mastercard o closed loop), BIN y reglas vía API.",
+          "Emisión instantánea — generá tarjetas virtuales y físicas en minutos.",
+          "Gestión en tiempo real — bloqueo, límites, tokenización y monitoreo desde el primer día."
+        ],
+        "useCases": ["Neobanco retail", "Fintech de nómina", "Marketplace"]
+      },
+      {
+        "id": "novocredit",
+        "name": "NovoCredit",
+        "description": "Empodera a los emisores y fintech con un conjunto completo de herramientas para la gestión, automatización y servicio de préstamos.",
+        "differentiator": "Una sola plataforma end-to-end para crédito consumer, business, auto e hipotecario.",
+        "steps": [
+          "Originación — conectada a underwriting y motores de decisioning externos.",
+          "Servicing automatizado — autopagos, estados de cuenta y gestión del ciclo de vida del préstamo.",
+          "Cobranza flexible — planes de pago y programas de hardship configurables."
+        ],
+        "useCases": [
+          "Crédito de consumo",
+          "Factoring",
+          "Bancos digitales",
+          "Buy now pay later",
+          "Automóvil",
+          "Hipotecas",
+          "Línea de crédito",
+          "Pequeña empresa",
+          "Estudiante"
+        ]
+      },
+      {
+        "id": "novoflow",
+        "name": "NovoFlow",
+        "description": "Construye redes de pago y corresponsales que brinden acceso instantáneo y comodidad a tus clientes.",
+        "differentiator": "Un solo switch conecta a todos los participantes de tu red, sin integraciones punto a punto.",
+        "steps": [
+          "Conectá tu plataforma — integración vía APIs al Banking Network de NovoPayment.",
+          "Sumá corresponsales — incorporá bancos y participantes de forma estandarizada.",
+          "Procesá en tiempo real — transferencias book-to-book y pagos entre instituciones al instante."
+        ],
+        "useCases": ["Corresponsalía bancaria", "Cooperativas", "Redes closed-loop"]
+      },
+      {
+        "id": "novoflux",
+        "name": "NovoFlux",
+        "description": "Switch de pagos nativo en la nube, que permite enrutar transacciones de forma dinámica, confiable y segura.",
+        "differentiator": "Reduce hasta 98% el tiempo de conexión con la red frente a infraestructura legacy.",
+        "steps": [
+          "Conexión cloud directa — sin hardware dedicado, conexión directa con Visa y Mastercard.",
+          "Enrutamiento dinámico — autorización en tiempo real con baja latencia y alta disponibilidad.",
+          "Switching + Issuing — procesá, autorizá y emití desde una misma plataforma cloud-native."
+        ],
+        "useCases": [
+          "Migración desde legacy",
+          "Fintechs de alto volumen",
+          "Picos estacionales"
+        ]
+      },
+      {
+        "id": "novospend",
+        "name": "NovoSpend",
+        "description": "Ofrece soluciones simplificadas para la gestión de gastos a tus clientes corporativos.",
+        "differentiator": "Mueve la política de gasto al único momento en que puede ser efectiva: el instante de la autorización.",
+        "steps": [
+          "Financiamiento corporativo — administra cuentas maestras y subcuentas para asignación flexible de fondos.",
+          "Emisión de tarjetas — distribuye tarjetas físicas o virtuales, individuales, en lote o innominadas.",
+          "Controles de gasto en tiempo real — límites por tarjeta, empleado o programa y restricción de categorías de comercio antes de autorizar."
+        ],
+        "useCases": [
+          "Comisiones de venta",
+          "Reembolsos e incentivos",
+          "Viáticos y dietas",
+          "Educación superior",
+          "Movilidad y entrega urbana",
+          "Incentivos para empleados",
+          "Reclutamiento",
+          "Contratistas",
+          "Reubicación",
+          "Flota y combustible"
+        ]
+      }
+    ]
+  },
+  "Performance": {
+    "title": "Rendimiento de la plataforma",
+    "subtitle": "Mejoras frente a procesadores e infraestructura legacy, según benchmarks internos de NovoPayment.",
+    "metrics": [
+      { "prefix": "-", "value": 99, "decimals": 0, "suffix": "%", "label": "velocidad de autorización" },
+      { "prefix": "-", "value": 99, "decimals": 0, "suffix": "%", "label": "tiempo de restaurar/agregar servidor" },
+      { "prefix": "", "value": 8, "decimals": 0, "suffix": "x", "label": "transacciones en paralelo" },
+      { "prefix": "-", "value": 98, "decimals": 0, "suffix": "%", "label": "tiempo de conexión con la red" },
+      { "prefix": "", "value": 1.3, "decimals": 1, "suffix": "x", "label": "capacidad de procesamiento pico" }
+    ]
+  },
+  "CloudInfra": {
+    "title": "Solución en la Nube de NovoPayment",
+    "subtitle": "Infraestructura cloud-native que elimina el hardware dedicado y conecta tu negocio con las redes de pago globales.",
+    "items": [
+      {
+        "name": "Conector Axion",
+        "description": "Conexión directa con redes de pago vía la nube, eliminando el hardware dedicado."
+      },
+      {
+        "name": "Autorizador Authrix",
+        "description": "Plataforma de autorización multi-tenant con reglas y procesamiento en la nube."
+      },
+      {
+        "name": "Integrador Nexus",
+        "description": "Integre perfectamente con sistemas externos utilizando API, flujos y esquemas de datos existentes."
+      }
+    ]
+  },
+  "ValueAdded": {
+    "title": "Productos de valor agregado",
+    "subtitle": "Un conjunto completo de productos complementarios de nuestro stack modular.",
+    "items": [
+      {
+        "name": "Card Tokenization",
+        "description": "NovoPayment actúa como Token Service Provider de Visa, permitiendo comercio digital seguro en e-commerce y apps móviles."
+      },
+      {
+        "name": "Click to Pay",
+        "description": "Checkout tokenizado, sin reingresar datos de tarjeta, reduciendo el abandono de compra."
+      },
+      {
+        "name": "Push Provisioning",
+        "description": "Registra tarjetas directamente en Apple Pay, Google Pay y Samsung Pay desde la app del banco."
+      },
+      {
+        "name": "Tap to Pay",
+        "description": "Convierte el celular del tarjetahabiente en su medio de pago principal vía NFC, sin tarjeta física."
+      }
+    ]
+  },
+  "Trust": {
+    "title": "Con la confianza de los principales innovadores",
+    "certificationsTitle": "Certificaciones y estándares",
+    "certifications": ["Visa Ready", "PCI DSS", "SOC 1", "SOC 2", "ISO 27001", "ISO 27017", "ISO 27018"],
+    "partnersPlaceholder": "Logos de partners y clientes disponibles próximamente"
+  },
+  "FinalCta": {
+    "title": "¿Listo para construir el futuro de los pagos?",
+    "subtitle": "Conversemos sobre cómo la infraestructura de Novopayment puede impulsar tu negocio.",
+    "formNamePlaceholder": "Nombre completo",
+    "formEmailPlaceholder": "Correo corporativo",
+    "formCompanyPlaceholder": "Empresa",
+    "formMessagePlaceholder": "Contanos sobre tu proyecto",
+    "formSubmit": "Enviar mensaje",
+    "formSuccess": "¡Gracias! Nos pondremos en contacto pronto.",
+    "ctaButton": "Habla con nosotros"
+  },
+  "Footer": {
+    "description": "Infraestructura de Banking as a Service (BaaS) para bancos, fintechs y plataformas digitales en toda América.",
+    "productsTitle": "Productos",
+    "companyTitle": "Compañía",
+    "legalTitle": "Legal",
+    "companyLinks": ["Por qué Novopayment", "Presencia regional", "Contacto"],
+    "legalLinks": ["Términos y condiciones", "Política de privacidad", "Seguridad"],
+    "socialLabel": "Síguenos",
+    "rights": "Todos los derechos reservados.",
+    "legalNote": "Novopayment y sus soluciones son ofrecidas a través de entidades reguladas en cada jurisdicción. Los servicios bancarios son prestados por instituciones financieras asociadas."
+  }
+}
