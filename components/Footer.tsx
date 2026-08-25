@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { MessageCircle, Rss, Share2 } from "lucide-react";
 import type { Product } from "./ProductCard";
@@ -11,13 +12,17 @@ export default async function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 bg-background">
+    <footer data-testid="site-footer" className="border-t border-white/10 bg-background">
       <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
-            <p className="text-lg font-bold text-foreground">
-              Novo<span className="text-gradient">payment</span>
-            </p>
+            <Image
+              src="/Logo-novopayment.svg"
+              alt="Novopayment"
+              width={1121}
+              height={125}
+              className="h-7 w-auto object-contain"
+            />
             <p className="mt-3 max-w-xs text-sm text-foreground/55">{t("description")}</p>
             <div className="mt-5 flex items-center gap-3">
               <a

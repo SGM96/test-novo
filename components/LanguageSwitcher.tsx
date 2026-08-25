@@ -36,6 +36,7 @@ export default function LanguageSwitcher() {
     <div ref={containerRef} className="relative">
       <button
         type="button"
+        data-testid="language-switcher-trigger"
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
@@ -56,6 +57,7 @@ export default function LanguageSwitcher() {
               <button
                 type="button"
                 role="option"
+                data-testid={`language-option-${loc}`}
                 aria-selected={loc === locale}
                 onClick={() => switchTo(loc)}
                 className={`block w-full px-4 py-2 text-left text-sm transition hover:bg-white/10 ${

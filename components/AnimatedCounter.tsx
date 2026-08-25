@@ -52,7 +52,7 @@ export default function AnimatedCounter({
   }, [value, duration]);
 
   return (
-    <span ref={ref}>
+    <span ref={ref} data-testid="animated-counter">
       {prefix}
       {display.toFixed(decimals)}
       {suffix}

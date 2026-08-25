@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight, Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -17,10 +18,20 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-md">
+    <header
+      data-testid="site-header"
+      className="sticky top-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-md"
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#top" className="text-lg font-bold tracking-tight text-foreground">
-          Novo<span className="text-gradient">payment</span>
+        <a href="#top" className="flex items-center">
+          <Image
+            src="/Logo-novopayment.svg"
+            alt="Novopayment"
+            width={1121}
+            height={125}
+            priority
+            className="h-8 w-auto object-contain"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
