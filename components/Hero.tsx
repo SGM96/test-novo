@@ -10,7 +10,10 @@ export default async function Hero() {
   return (
     <section id="top" className="bg-hero-gradient relative overflow-hidden pt-28 pb-24 lg:pt-40 lg:pb-32">
       <div className="mx-auto max-w-5xl px-6 text-center lg:px-8">
-        <h1 className="animate-hero text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        <h1
+          data-testid="hero-heading"
+          className="animate-hero text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+        >
           {t("titleBefore")} <span className="text-gradient">{t("titleHighlight")}</span>{" "}
           {t("titleAfter")}
         </h1>

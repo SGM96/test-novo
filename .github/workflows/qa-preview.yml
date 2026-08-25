@@ -1,0 +1,183 @@
+name: QA Preview (Playwright)
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+  pull-requests: write
+  deployments: read
+
+jobs:
+  qa:
+    # Vercel reports deployment_status with environment "Preview" for preview
+    # deployments and "Production" for the production branch — only react to
+    # successful preview deploys, never production or main.
+    if: |
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment_status.environment == 'Preview'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout commit under test
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run functional tests
+        id: functional
+        continue-on-error: true
+        env:
+          BASE_URL: ${{ github.event.deployment_status.target_url }}
+          PLAYWRIGHT_HTML_REPORT: playwright-report/functional
+          PLAYWRIGHT_JSON_OUTPUT_NAME: functional-results.json
+        run: npx playwright test tests/functional.spec.ts --project=chromium --reporter=html,json
+
+      - name: Run visual regression tests
+        id: visual
+        continue-on-error: true
+        env:
+          BASE_URL: ${{ github.event.deployment_status.target_url }}
+          PLAYWRIGHT_HTML_REPORT: playwright-report/visual
+          PLAYWRIGHT_JSON_OUTPUT_NAME: visual-results.json
+        run: npx playwright test tests/visual.spec.ts --project=chromium --reporter=html,json
+
+      - name: Upload Playwright HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+      - name: Comment QA results on the pull request
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+
+            function readJsonResults(path) {
+              try {
+                return JSON.parse(fs.readFileSync(path, "utf8"));
+              } catch {
+                return null;
+              }
+            }
+
+            function summarize(results) {
+              if (!results) {
+                return { passed: 0, failed: 0, total: 0, failedTitles: [] };
+              }
+              const stats = results.stats || {};
+              const failedTitles = [];
+
+              const walk = (suite) => {
+                for (const spec of suite.specs || []) {
+                  for (const t of spec.tests || []) {
+                    const ok = (t.results || []).every(
+                      (r) => r.status === "passed" || r.status === "expected"
+                    );
+                    if (!ok) failedTitles.push(spec.title);
+                  }
+                }
+                for (const s of suite.suites || []) walk(s);
+              };
+              for (const s of results.suites || []) walk(s);
+
+              return {
+                passed: stats.expected || 0,
+                failed: (stats.unexpected || 0) + (stats.flaky || 0),
+                total:
+                  (stats.expected || 0) +
+                  (stats.unexpected || 0) +
+                  (stats.flaky || 0) +
+                  (stats.skipped || 0),
+                failedTitles,
+              };
+            }
+
+            const functional = summarize(readJsonResults("functional-results.json"));
+            const visual = summarize(readJsonResults("visual-results.json"));
+
+            const functionalOutcome = "${{ steps.functional.outcome }}";
+            const visualOutcome = "${{ steps.visual.outcome }}";
+
+            const previewUrl = "${{ github.event.deployment_status.target_url }}";
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+
+            let body = "### QA Preview Report\n\n";
+            body += `Preview URL: ${previewUrl}\n\n`;
+            body += "| Suite | Passed | Failed | Total | Status |\n";
+            body += "|---|---|---|---|---|\n";
+            body += `| Functional | ${functional.passed} | ${functional.failed} | ${functional.total} | ${
+              functionalOutcome === "success" ? "PASS" : "FAIL"
+            } |\n`;
+            body += `| Visual regression | ${visual.passed} | ${visual.failed} | ${visual.total} | ${
+              visualOutcome === "success" ? "PASS" : "DIFF FOUND"
+            } |\n\n`;
+
+            if (visual.failedTitles.length > 0) {
+              body += "**Visual differences detected:**\n";
+              for (const title of visual.failedTitles) {
+                body += `- ${title}\n`;
+              }
+              body += "\n";
+            }
+
+            body += `[Full Playwright report (artifact)](${runUrl})\n`;
+
+            const { data: prs } = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: "${{ github.event.deployment.sha }}",
+            });
+
+            const targetPr = prs.find((pr) => pr.state === "open") || prs[0];
+            if (!targetPr) {
+              console.log("No pull request found for this deployment commit, skipping comment.");
+              return;
+            }
+
+            const marker = "<!-- qa-preview-report -->";
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: targetPr.number,
+            });
+            const existing = comments.find((c) => c.body && c.body.includes(marker));
+            const finalBody = `${marker}\n${body}`;
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body: finalBody,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: targetPr.number,
+                body: finalBody,
+              });
+            }
+
+      - name: Fail the job if functional tests failed
+        if: steps.functional.outcome == 'failure'
+        run: |
+          echo "Functional tests failed against the preview deployment at ${{ github.event.deployment_status.target_url }}"
+          exit 1

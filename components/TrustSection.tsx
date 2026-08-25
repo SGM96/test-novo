@@ -9,7 +9,7 @@ export default async function TrustSection() {
   const certifications = t.raw("certifications") as string[];
 
   return (
-    <section className="py-24">
+    <section data-testid="trust-section" className="py-24">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <FadeIn>
           <p className="text-center text-xs font-semibold uppercase tracking-widest text-foreground/45">
@@ -38,6 +38,7 @@ export default async function TrustSection() {
             {CLIENT_LOGOS.map((logo) => (
               <div
                 key={logo.name}
+                data-testid="client-logo"
                 className="flex flex-shrink-0 items-center opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
               >
                 <Image

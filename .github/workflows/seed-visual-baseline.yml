@@ -1,0 +1,55 @@
+name: Seed Visual Regression Baseline
+
+# One-time / on-demand workflow: (re)generates the Playwright screenshot
+# baselines used by tests/visual.spec.ts and commits them to the current
+# branch. Must run on the SAME OS as qa-preview.yml (ubuntu-latest) — font
+# rendering differs across operating systems, so baselines generated on a
+# developer's Windows/Mac machine will not match Linux CI screenshots and
+# would cause false "visual difference" failures on every PR.
+#
+# Run this manually (Actions tab -> Seed Visual Regression Baseline -> Run
+# workflow) against a stable URL (e.g. a Vercel preview or production
+# deployment) whenever the design intentionally changes.
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "URL to screenshot for the new baseline (e.g. a Vercel preview or production URL)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Generate baseline screenshots
+        env:
+          BASE_URL: ${{ inputs.base_url }}
+        run: npx playwright test tests/visual.spec.ts --project=chromium --update-snapshots
+
+      - name: Commit updated baselines
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tests/visual.spec.ts-snapshots
+          git diff --cached --quiet || git commit -m "chore: seed visual regression baseline screenshots"
+          git push

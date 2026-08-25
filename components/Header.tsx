@@ -18,7 +18,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-md">
+    <header
+      data-testid="site-header"
+      className="sticky top-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-md"
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="#top" className="flex items-center">
           <Image
