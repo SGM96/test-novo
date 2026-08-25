@@ -13,6 +13,11 @@ jobs:
     # Vercel reports deployment_status with environment "Preview" for preview
     # deployments and "Production" for the production branch — only react to
     # successful preview deploys, never production or main.
+    #
+    # NOTE: Deployment Protection must stay OFF for this project's Vercel
+    # previews. These tests run unauthenticated, so a protected preview
+    # would serve Vercel's SSO login page instead of the app, and every
+    # test would time out looking for elements that are never there.
     if: |
       github.event.deployment_status.state == 'success' &&
       github.event.deployment_status.environment == 'Preview'

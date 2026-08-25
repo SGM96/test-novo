@@ -11,6 +11,11 @@ if (!BASE_URL) {
   );
 }
 
+// NOTE: Vercel Deployment Protection must stay disabled for this project's
+// previews — this suite runs unauthenticated (no SSO bypass), so a
+// protected preview would make every test time out looking for elements on
+// what is actually a Vercel login page.
+
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,

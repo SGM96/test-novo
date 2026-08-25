@@ -10,6 +10,10 @@ name: Seed Visual Regression Baseline
 # Run this manually (Actions tab -> Seed Visual Regression Baseline -> Run
 # workflow) against a stable URL (e.g. a Vercel preview or production
 # deployment) whenever the design intentionally changes.
+#
+# NOTE: Deployment Protection must stay OFF for this project's Vercel
+# previews. This runs unauthenticated, so a protected preview would just
+# screenshot Vercel's SSO login page instead of the app.
 
 on:
   workflow_dispatch:
